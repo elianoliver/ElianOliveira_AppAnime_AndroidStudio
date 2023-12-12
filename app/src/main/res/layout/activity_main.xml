@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:background="@color/background"
+
+                android:title="ANIMES"
+                android:titleTextColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ic_perfil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp"
+                android:contentDescription="Perfil"
+                android:onClick="abreSobre"
+                android:src="@drawable/ic_perfil"
+                app:layout_constraintBottom_toBottomOf="@id/toolbar"
+                app:layout_constraintEnd_toEndOf="@id/toolbar"
+                app:layout_constraintStart_toStartOf="@id/toolbar"
+                app:layout_constraintTop_toTopOf="@id/toolbar" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!--    SCROLL VERTICAL-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="55dp"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <!--    SAUDAÇÃO -->
+            <TextView
+                android:id="@+id/saudacao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:text="Bem vindo novamente, Elian!"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/appBarLayout" />
+
+            <!--    PRIMEIRA LISTA DE ANIMES -->
+            <TextView
+                android:id="@+id/categoriaAnimes1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="Animes Favoritos"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/saudacao" />
+
+            <HorizontalScrollView
+                android:id="@+id/scrollAnimes1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/categoriaAnimes1">
+
+                <LinearLayout
+                    android:id="@+id/movieCoversLayout1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="200dp"
+                        android:layout_marginEnd="10dp"
+                        android:contentDescription="Cowboy Bebop"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/cowboy" />
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="200dp"
+                        android:layout_marginEnd="10dp"
+                        android:contentDescription="Berserk"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/berserk" />
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="200dp"
+                        android:layout_marginEnd="10dp"
+                        android:contentDescription="Evangelion"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/evangelion" />
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="200dp"
+                        android:layout_marginEnd="10dp"
+                        android:contentDescription="Death Note"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/death_note" />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- SEGUNDA LISTA DE ANIMES -->
+            <TextView
+                android:id="@+id/categoriaAnimes2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Outros Animes"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/scrollAnimes1" />
+
+            <HorizontalScrollView
+                android:id="@+id/scrollAnimes2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/categoriaAnimes2">
+
+                <LinearLayout
+                    android:id="@+id/movieCoversLayout2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="200dp"
+                        android:layout_marginEnd="10dp"
+                        android:contentDescription="Akira"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/akira" />
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="200dp"
+                        android:layout_marginEnd="10dp"
+                        android:contentDescription="Another"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/another" />
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="200dp"
+                        android:layout_marginEnd="10dp"
+                        android:contentDescription="Perfect Blue"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/perfect" />
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="200dp"
+                        android:layout_marginEnd="10dp"
+                        android:contentDescription="Paprika"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/paprika" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!--    TERCEIRA LISTA DE ANIMES-->
+            <TextView
+                android:id="@+id/categoriaAnimes3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Studio Ghibli"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/scrollAnimes2" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/categoriaAnimes3">
+
+                <LinearLayout
+                    android:id="@+id/movieCoversLayout3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="200dp"
+                        android:layout_marginEnd="10dp"
+                        android:contentDescription="Howl's Castle"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/howls" />
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="200dp"
+                        android:layout_marginEnd="10dp"
+                        android:contentDescription="Kiki"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/kiki" />
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="200dp"
+                        android:layout_marginEnd="10dp"
+                        android:contentDescription="Spirited Away"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/spirited" />
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="200dp"
+                        android:layout_marginEnd="10dp"
+                        android:contentDescription="Totoro"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/totoro" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
